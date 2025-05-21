@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Developer Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+        ...
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+            <h1>Welcome to NONSO'S Portfolio</h1>
+            <nav><button id="toggle-theme">🌙 Dark Mode</button>
+
+                    <a href="#about">About Me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+            </nav>
+            </div>
+        </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate developer that is learning full-stack development and I really want to keep improving my coding skills to be able to tackle real life situations</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-id">
+                <div class="project-card" onclick="showdetails('Personal Portfolio Website')">
+                 <h3>Project 1: Personal Portfolio Website</h3>
+                 <p>A personal Website To Showcase My Work And Skills</p>
+                </div>
+                <div class="project-card" onclick="showdetails('To-Do App')">
+                    <h3>Project 2: To-Do App</h3>
+                    <p>A Simple To-Do List Application That Helps Organize And Manage My Daily Tasks</p>
+                </div>
+                <div class="projects-card" onclick="showdetails('Real World Implementations of HTML5, CSS3 and JAVA-SCRIPT')">
+                    <h3>Project 3: Real World Implementations of HTML5, CSS3 and JAVA-SCRIPT</h3>
+                    <p>Real World Implementations of HTML5, CSS3 and JAVA-SCRIPT</p>
+                </div>
+                <div class="projects-card" onclick="showdetails('Cloning Companies Websites')">
+                    <h3>Project 4: Cloning Companies Websites</h3>
+                    <p>A Project In Which I'll Be Cloning Other Large Companies Websites</p>
+                </div>
+                </div>
+           </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+             <form id="contactform">
+                <input type="text" id="name" placeholder="Your Name" required/>
+                <input type="email" id="email" placeholder="Your Email" required/>
+                <textarea id="message" placeholder="Your Message....." required></textarea>   
+                <button type="Submit">SEND</button>
+             </form>
+        </section>
+    </main>
+        <footer>
+            <p>&copy; 2025 My Developer Portfolio. All Rights Reserved</p>
+        </footer>
+        <script>
+  function showDetails(projectName) {
+    alert("You clicked on: " + projectName);
+  }
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>This is a popup modal!</p>
+  </div>
+</div>
+</script>
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn. addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+            toggleBtn.textContent = document.body.classList.contains("dark-mode")
+                ? "🌞 Light Mode"
+                : "🌙 Dark Mode";
+        });
+  </script>
+   <script>
+      document.getElementById("contactform").addEventListener("submit", function(e) {
+        e.preventDefault(); // prevent form from refreshing the page
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+        
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        alert("Message Sent Successfully!")
+        //You can later replace this with real backend integration
+        this.reset(); //clear the form
+      });
+   </script>
+   <script>
+  const modal = document.getElementById("modal");
+  const closeBtn = document.querySelector(".close");
+
+  // Example: open modal on project click
+  function openModal() {
+    modal.style.display = "block";
+  }
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function (e) {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+    </body> 
+        </html>
