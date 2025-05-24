@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects – NONSO’S Portfolio</title>
+
+  <!-- Scroll Progress Bar -->
+  <style>
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--primary-color);
+      width: 0;
+      z-index: 2000;
+      transition: width 0.25s ease-out;
+    }
+    /* Preloader */
+    #preloader {
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background:#fff; display:flex; align-items:center; justify-content:center; z-index:3000;
+    }
+    .spinner {
+      width:40px; height:40px; border:4px solid rgba(0,0,0,0.1);
+      border-top-color:var(--primary-color); border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+    @keyframes spin{ to{ transform:rotate(360deg); } }
+    /* Custom cursor */
+    #cursor {
+      position: fixed; top:0; left:0; width:20px; height:20px;
+      background:var(--primary-color); border-radius:50%;
+      pointer-events:none; transform:translate(-50%,-50%);
+      transition:width .2s, height .2s, background .2s;
+      z-index:4000;
+    }
+  </style>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#1e90ff"/>
+
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader"><div class="spinner"></div></div>
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
+  <!-- ARIA announcer & scroll progress -->
+  <div id="aria-announcer" aria-live="polite" style="position:absolute;left:-9999px"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container">
+      <img src="path/to/your-logo.png" alt="Logo" class="logo"/>
+      <h1>My Projects</h1>
+
+      <!-- THEME TOGGLE: only emoji -->
+      <button id="toggle-theme">🌙</button>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="#" id="contact-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <section id="projects" class="fade-in-section visible">
+      <h2>My Projects</h2>
+      <div class="projects">
+        <!-- ORIGINAL 4 -->
+        <div class="project-card"
+             data-title="Personal Portfolio Website"
+             data-desc="Responsive portfolio with theme toggle, scroll animations & live demos."
+             data-tech="HTML, CSS, JavaScript"
+             data-github="https://github.com/22Greatness/PORTFOLIO"
+             data-demo="https://22greatness.github.io/PORTFOLIO/">
+          <h3>Personal Portfolio Website</h3>
+          <p>Responsive portfolio with theme toggle, scroll animations & live demos.</p>
+        </div>
+        <div class="project-card"
+             data-title="To-Do List App"
+             data-desc="CRUD tasks with localStorage persistence & clean vanilla JS UX."
+             data-tech="HTML, CSS, JavaScript"
+             data-github="https://github.com/22Greatness/PORTFOLIO"
+             data-demo="https://22greatness.github.io/PORTFOLIO/">
+          <h3>To-Do List App</h3>
+          <p>CRUD tasks with localStorage persistence & clean vanilla JS UX.</p>
+        </div>
+        <div class="project-card"
+             data-title="HTML5/CSS3/JavaScript Demo"
+             data-desc="Interactive demos of modern web standards & ES6 scripting."
+             data-tech="HTML5, CSS3, JavaScript (ES6+)"
+             data-github="https://github.com/22Greatness/PORTFOLIO"
+             data-demo="https://22greatness.github.io/PORTFOLIO/">
+          <h3>HTML5/CSS3/JavaScript Demo</h3>
+          <p>Interactive demos of modern web standards & ES6 scripting.</p>
+        </div>
+        <div class="project-card"
+             data-title="Website Clones"
+             data-desc="Cloned popular sites to master layouts, Flexbox, Grid & responsive breakpoints."
+             data-tech="HTML, CSS, JavaScript"
+             data-github="https://github.com/22Greatness/PORTFOLIO"
+             data-demo="https://22greatness.github.io/PORTFOLIO/">
+          <h3>Website Clones</h3>
+          <p>Cloned popular sites to master layouts, Flexbox, Grid & responsive breakpoints.</p>
+        </div>
+
+        <!-- 5 NEW WEB DEV -->
+        <div class="project-card"
+             data-title="Responsive E-Commerce Site"
+             data-desc="Online store layout with product filtering, hover effects & mobile-first design."
+             data-tech="HTML, CSS Grid/Flex, JavaScript"
+             data-github="https://github.com/22Greatness/ecommerce-demo"
+             data-demo="https://22greatness.github.io/ecommerce-demo/">
+          <h3>Responsive E-Commerce Site</h3>
+          <p>Store layout with product filtering, hover effects & mobile-first design.</p>
+        </div>
+        <div class="project-card"
+             data-title="Real-Time Chat App"
+             data-desc="Browser chat with rooms, online status & socket events."
+             data-tech="Node.js, Express, Socket.io"
+             data-github="https://github.com/22Greatness/chat-app"
+             data-demo="#">
+          <h3>Real-Time Chat App</h3>
+          <p>Browser chat with rooms, online status & socket events.</p>
+        </div>
+        <div class="project-card"
+             data-title="Task Manager w/ Auth"
+             data-desc="Full CRUD with JWT-secured endpoints & React front-end."
+             data-tech="React, Node.js, JWT"
+             data-github="https://github.com/22Greatness/task-manager"
+             data-demo="#">
+          <h3>Task Manager w/ Auth</h3>
+          <p>Full CRUD with JWT-secured endpoints & React front-end.</p>
+        </div>
+        <div class="project-card"
+             data-title="Progressive Web App"
+             data-desc="Offline-capable PWA with service workers & Cache API strategies."
+             data-tech="PWA, Service Workers, Cache API"
+             data-github="https://github.com/22Greatness/pwa-demo"
+             data-demo="#">
+          <h3>Progressive Web App</h3>
+          <p>Offline-capable PWA with service workers & Cache API strategies.</p>
+        </div>
+        <div class="project-card"
+             data-title="React Portfolio Redesign"
+             data-desc="Component-driven SPA using React, routing & CSS Modules."
+             data-tech="React, CSS Modules"
+             data-github="https://github.com/22Greatness/react-portfolio"
+             data-demo="https://22greatness.github.io/react-portfolio/">
+          <h3>React Portfolio Redesign</h3>
+          <p>Component-driven SPA using React, routing & CSS Modules.</p>
+        </div>
+
+        <!-- 10 NEW DATA ANALYTICS -->
+        <div class="project-card"
+             data-title="Sales Dashboard"
+             data-desc="Interactive Tableau dashboard with dynamic KPIs & filters."
+             data-tech="Tableau, Excel"
+             data-github="https://github.com/22Greatness/sales-dashboard"
+             data-demo="#">
+          <h3>Sales Dashboard</h3>
+          <p>Tableau dashboard with dynamic KPIs & filters.</p>
+        </div>
+        <div class="project-card"
+             data-title="Customer Segmentation"
+             data-desc="K-means clustering for targeted marketing segments."
+             data-tech="Python (pandas, scikit-learn)"
+             data-github="https://github.com/22Greatness/customer-segmentation"
+             data-demo="#">
+          <h3>Customer Segmentation</h3>
+          <p>K-means clustering for targeted marketing segments.</p>
+        </div>
+        <div class="project-card"
+             data-title="Time Series Forecast"
+             data-desc="ARIMA forecasting pipeline on monthly revenue series."
+             data-tech="Python (statsmodels)"
+             data-github="https://github.com/22Greatness/time-series-forecast"
+             data-demo="#">
+          <h3>Time Series Forecast</h3>
+          <p>ARIMA forecasting pipeline on monthly revenue.</p>
+        </div>
+        <div class="project-card"
+             data-title="A/B Test Analysis"
+             data-desc="Hypothesis test on marketing variants using SciPy."
+             data-tech="Python (SciPy)"
+             data-github="https://github.com/22Greatness/ab-test-analysis"
+             data-demo="#">
+          <h3>A/B Test Analysis</h3>
+          <p>Hypothesis test on marketing variants using SciPy.</p>
+        </div>
+        <div class="project-card"
+             data-title="Tweet Sentiment Analysis"
+             data-desc="NLP pipeline: cleaning, vectorization & sentiment scoring."
+             data-tech="Python (NLTK, pandas)"
+             data-github="https://github.com/22Greatness/tweet-sentiment"
+             data-demo="#">
+          <h3>Tweet Sentiment Analysis</h3>
+          <p>NLP pipeline: cleaning, vectorization & sentiment scoring.</p>
+        </div>
+        <div class="project-card"
+             data-title="Data Cleaning & ETL"
+             data-desc="Airflow-backed ETL to ingest, clean & store datasets."
+             data-tech="Python, Apache Airflow"
+             data-github="https://github.com/22Greatness/data-etl"
+             data-demo="#">
+          <h3>Data Cleaning & ETL</h3>
+          <p>Airflow ETL to ingest, clean & store datasets.</p>
+        </div>
+        <div class="project-card"
+             data-title="Interactive D3.js Charts"
+             data-desc="Custom zoomable & draggable visualizations with D3."
+             data-tech="JavaScript, D3.js"
+             data-github="https://github.com/22Greatness/d3-visuals"
+             data-demo="#">
+          <h3>Interactive D3.js Charts</h3>
+          <p>Zoomable & draggable visualizations with D3.</p>
+        </div>
+        <div class="project-card"
+             data-title="ML Model Deployment"
+             data-desc="Flask API exposing scikit-learn model predictions."
+             data-tech="Python, Flask, scikit-learn"
+             data-github="https://github.com/22Greatness/ml-deploy"
+             data-demo="#">
+          <h3>ML Model Deployment</h3>
+          <p>Flask API exposing scikit-learn model predictions.</p>
+        </div>
+        <div class="project-card"
+             data-title="Supply Chain Optimization"
+             data-desc="Linear programming with PuLP to minimize logistics cost."
+             data-tech="Python, PuLP"
+             data-github="https://github.com/22Greatness/supply-opt"
+             data-demo="#">
+          <h3>Supply Chain Optimization</h3>
+          <p>Linear programming with PuLP to minimize logistics cost.</p>
+        </div>
+        <div class="project-card"
+             data-title="Market Basket Analysis"
+             data-desc="Apriori association rule mining on transaction data."
+             data-tech="Python, mlxtend"
+             data-github="https://github.com/22Greatness/market-basket"
+             data-demo="#">
+          <h3>Market Basket Analysis</h3>
+          <p>Apriori rule mining on transaction data.</p>
+        </div>
+
+        <!-- +1 EXTRA -->
+        <div class="project-card"
+             data-title="Netflix Recommendation System"
+             data-desc="Collaborative filtering model for personalized show suggestions."
+             data-tech="Python, pandas, scikit-surprise"
+             data-github="https://github.com/22Greatness/netflix-recommender"
+             data-demo="#">
+          <h3>Netflix Recommendation System</h3>  
+          <p>Collaborative filtering model for show suggestions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 NONSO’S Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== Modal ===== -->
+  <div id="modal"
+       class="modal"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-title"
+       aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title">Project Details</h2>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- PWA Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(console.error);
+    }
+  </script>
+
+  <!-- Main Scripts -->
+  <script>
+    // 1) Hide preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // 2) Custom cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.left = e.clientX + 'px';
+    });
+    document.querySelectorAll('a, button, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1.5)';
+        cursor.style.background = 'var(--secondary-color)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+        cursor.style.background = 'var(--primary-color)';
+      });
+    });
+
+    // 3) THEME TOGGLE & PERSISTENCE
+    const toggleBtn = document.getElementById('toggle-theme');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark-mode');
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '🌙';
+    }
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // 4) Scroll-progress
+    const prog = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      prog.style.width = pct + '%';
+    });
+
+    // 5) ARIA announce nav
+    const announcer = document.getElementById('aria-announcer');
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        announcer.textContent = `Navigated to ${a.textContent}`;
+      });
+    });
+
+    // 6) Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('nav').classList.toggle('active');
+    });
+
+    // 7) PROJECT-CARD modal & focus-trap (unchanged)
+    const modal = document.getElementById('modal');
+    const closeBtn = modal.querySelector('.close');
+    const modalBody = modal.querySelector('.modal-body');
+    let lastFocus;
+    function getFocusable(el) {
+      return el.querySelectorAll('button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])');
+    }
+    function openModal(html) {
+      lastFocus = document.activeElement;
+      modalBody.innerHTML = html;
+      modal.setAttribute('aria-hidden','false');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      const focusables = Array.from(getFocusable(modal));
+      focusables[0].focus();
+      function trap(e) {
+        if (e.key !== 'Tab') return;
+        const first = focusables[0], last = focusables[focusables.length -1];
+        if (e.shiftKey && document.activeElement===first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement===last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+      modal.addEventListener('keydown', trap);
+      modal._trap = trap;
+    }
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      modal.removeEventListener('keydown', modal._trap);
+      lastFocus && lastFocus.focus();
+    }
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        openModal(`
+          <h3>${card.dataset.title}</h3>
+          <p>${card.dataset.desc}</p>
+          <p><strong>Tech Stack:</strong> ${card.dataset.tech}</p>
+          <p>
+            <a href="${card.dataset.github}" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+            &nbsp;|&nbsp;
+            <a href="${card.dataset.demo}" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </p>
+        `);
+      });
+    });
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => e.target===modal && closeModal());
+    document.addEventListener('keydown', e => {
+      if (e.key==='Escape' && modal.classList.contains('show')) closeModal();
+    });
+
+    // 8) CONTACT-LINK opens Contact Form
+    document.getElementById('contact-link').addEventListener('click', e => {
+      e.preventDefault();
+      openModal(`
+        <h3>Contact Me</h3>
+        <form id="contactForm">
+          <input name="name"    type="text"    placeholder="Your Name"     required />
+          <input name="email"   type="email"   placeholder="Your Email"    required />
+          <input name="phone"   type="tel"     placeholder="Your Mobile"   required />
+          <textarea name="message" placeholder="Your Message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      `);
+    });
+
+    // 9) REPLACE old submit with fetch POST to /api/contact
+    document.addEventListener('submit', async e => {
+      if (e.target.id === 'contactForm') {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+          name:    form.name.value.trim(),
+          email:   form.email.value.trim(),
+          phone:   form.phone.value.trim(),
+          message: form.message.value.trim(),
+        };
+        try {
+          const resp = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          const result = await resp.json();
+          if (result.status === 'ok') {
+            alert('Thanks! We got your message.');
+            form.reset();
+            closeModal();
+          } else {
+            throw new Error(result.error || 'Server error');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Oops—something went wrong. Try again later.');
+        }
+      }
+    });
+
+    // 10) Scroll reveal
+    const faders = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(el => observer.observe(el));
+
+    // 11) Back-to-top
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scrollTop';
+    scrollTopBtn.innerHTML = '⬆';
+    document.body.append(scrollTopBtn);
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.pageYOffset>300);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  </script>
+</body>
+</html>

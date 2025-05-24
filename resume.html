@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NONSO’S Portfolio</title>
+  <title>Resume – NONSO’S Portfolio</title>
 
-  <!-- ─── Scroll Progress Bar (loads early) ─────────────────── -->
+  <!-- ─── Scroll Progress Bar ───────────────────────────── -->
   <style>
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 4px;
@@ -14,57 +14,48 @@
     }
   </style>
 
-  <!-- ─── PWA Manifest & Theme Color ──────────────────────── -->
+  <!-- ─── PWA Manifest & Theme Color ───────────────────── -->
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#1e90ff"/>
 
-  <!-- ─── Core Styles & Fonts ─────────────────────────────── -->
+  <!-- ─── Core Styles & Fonts ───────────────────────────── -->
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
-  
-  <!-- ─── Optional Libraries for Enhancements ─────────────── -->
+
+  <!-- ─── Enhancement Libraries ─────────────────────────── -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js" defer></script>
 </head>
 <body>
 
-  <!-- ─── Preloader ───────────────────────────────────────── -->
+  <!-- ─── Preloader ─────────────────────────────────────── -->
   <div id="preloader">
     <div class="spinner"></div>
   </div>
 
-  <!-- ─── Custom Cursor ──────────────────────────────────── -->
+  <!-- ─── Custom Cursor ────────────────────────────────── -->
   <div id="cursor"></div>
 
-  <!-- ─── ARIA Announcer & Scroll Bar ────────────────────── -->
+  <!-- ─── ARIA Announcer & Scroll Bar ─────────────────── -->
   <div id="aria-announcer" aria-live="polite" style="position:absolute; left:-9999px"></div>
   <div id="scroll-progress"></div>
 
   <!-- ===== Header ===== -->
   <header>
-    <!-- Particles.js background container -->
-    <div id="particles-js" style="position:absolute; inset:0; z-index:-1;"></div>
-
     <div class="container">
       <img src="assets/logo design.jpg" alt="Logo" class="logo"/>
-      <!-- Hero Text for Typewriter -->
-      <h1 id="hero-text"></h1>
-
-      <!-- Theme Toggle & Mobile Nav -->
-      <button id="toggle-theme" class="theme-toggle">🌙</button>
+      <h1>My Resume</h1>
+      <button id="toggle-theme">🌙 Dark Mode</button>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-
-      <!-- Navigation Links -->
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="resume.html">Resume</a>
+        <a href="index.html">Home</a>
+        <a href="resume.html" class="active">Resume</a>
         <a href="projects.html">Projects</a>
         <a href="#" id="contact-link">Contact</a>
       </nav>
@@ -73,19 +64,57 @@
 
   <!-- ===== Main Content ===== -->
   <main>
-    <section id="about" class="fade-in-section visible">
-      <h2>About Me</h2>
+    <section id="resume" class="fade-in-section visible">
+      <h2>GREATNESS CHUKWUNONSO CHARLES</h2>
       <p>
-        I’m a Software Engineering graduate passionate about building
-        <strong>responsive front‐end</strong> (HTML, CSS, JavaScript) and growing
-        into full‐stack (React, Node.js) &amp; data roles (SQL, Excel, MongoDB).
+        <strong>22Greatness | Lagos, Nigeria</strong><br/>
+        greatnesscharles7@gmail.com | +234 704 175 8791 | GitHub: 22Greatness
       </p>
-      <a href="assets/Nonso-Charles-CV.pdf"
-         download
-         class="btn-cv"
-         data-tooltip="Download my résumé as PDF">
-        📄 Download My CV
-      </a>
+
+      <h3>🎓 Education</h3>
+      <p>
+        <strong>B.Sc. Software Engineering</strong>, Babcock University<br/>
+        Expected Graduation: 2025
+      </p>
+
+      <h3>💼 Objective</h3>
+      <p>
+        Motivated Software Engineering graduate with a passion for web development
+        & data analysis. Skilled in responsive front-end, SQL & Excel. Seeking an
+        entry-level Full-Stack or Data Analyst role.
+      </p>
+
+      <h3>📊 Technical Skills</h3>
+      <ul>
+        <li><strong>Web Dev:</strong> HTML, CSS, JavaScript, Responsive Design, Git & GitHub, React (learning), Node.js (learning), MongoDB (learning)</li>
+        <li><strong>Data & Visualization:</strong> Excel, SQL (PostgreSQL, MySQL), NoSQL (MongoDB), Data Cleaning, Tableau/Power BI (learning)</li>
+        <li><strong>ML & Backend:</strong> Python, pandas, scikit-learn, Flask</li>
+        <li><strong>Tools:</strong> VS Code, Chrome DevTools, Netlify, GitHub Pages, Windows 11</li>
+      </ul>
+
+      <h3>📅 Experience</h3>
+      <p>
+        <strong>Self-Initiated Projects</strong>, Remote — Jan 2024–Present<br/>
+        Front-End Dev & Aspiring Data Analyst
+      </p>
+      <ul>
+        <li>Designed & deployed responsive portfolio with dark mode & animations</li>
+        <li>Built blog UI with AOS.js scroll reveals</li>
+        <li>Analyzed sales data in Excel (cleaning, pivot charts, KPI reporting)</li>
+        <li>Practiced SQL queries on mock datasets</li>
+        <li>Explored MongoDB for content storage</li>
+      </ul>
+
+      <h3>🔑 Certifications</h3>
+      <ul>
+        <li>Responsive Web Design — freeCodeCamp (in progress)</li>
+        <li>Intro to Data Analytics — Google/Coursera (in progress)</li>
+      </ul>
+
+      <h3>✨ Soft Skills</h3>
+      <p>
+        Problem Solving | Adaptability | Communication | Critical Thinking | Attention to Detail | Self-Learning | Collaboration
+      </p>
     </section>
   </main>
 
@@ -94,7 +123,7 @@
     <p>&copy; 2025 NONSO’S Portfolio. All rights reserved.</p>
   </footer>
 
-  <!-- ===== Modal (Contact Form) ===== -->
+  <!-- ===== Modal (Contact) ===== -->
   <div
     id="modal"
     class="modal"
@@ -117,33 +146,18 @@
     }
   </script>
 
-  <!-- ===== Main Script Block ===== -->
+  <!-- ===== Main Scripts ===== -->
   <script>
-    // ─── 1. Preloader Hide ────────────────────────────────
+    // 1) Preloader hide
     window.addEventListener('load', () => {
       document.getElementById('preloader').style.display = 'none';
     });
 
-    // ─── 2. Typewriter Hero ───────────────────────────────
-    document.addEventListener('DOMContentLoaded', () => {
-      new Typewriter('#hero-text', { loop: false, delay: 75 })
-        .typeString('Welcome to NONSO’S Portfolio')
-        .start();
-    });
-
-    // ─── 3. Particles.js Init ─────────────────────────────
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.particlesJS) {
-        particlesJS.load('particles-js', 'particles.json', () => {});
-      }
-    });
-
-    // ─── 4. Theme Toggle & Persistence + Flip Effect ───────
+    // 2) Theme toggle & persistence
     const toggleBtn = document.getElementById('toggle-theme');
     const saved = localStorage.getItem('theme');
     if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.body.classList.add('dark-mode');
-      toggleBtn.classList.add('flipped');
       toggleBtn.textContent = '☀️';
     } else {
       toggleBtn.textContent = '🌙';
@@ -151,19 +165,18 @@
     toggleBtn.addEventListener('click', () => {
       const isDark = document.body.classList.toggle('dark-mode');
       toggleBtn.textContent = isDark ? '☀️' : '🌙';
-      toggleBtn.classList.toggle('flipped', isDark);
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // ─── 5. Scroll‐Progress Bar ────────────────────────────
+    // 3) Scroll-progress bar
     const prog = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
       const pct = window.scrollY /
-        (document.body.scrollHeight - window.innerHeight) * 100;
+                  (document.body.scrollHeight - window.innerHeight) * 100;
       prog.style.width = pct + '%';
     });
 
-    // ─── 6. ARIA Announcer ────────────────────────────────
+    // 4) ARIA nav announcements
     const announcer = document.getElementById('aria-announcer');
     document.querySelectorAll('nav a').forEach(a => {
       a.addEventListener('click', () => {
@@ -171,35 +184,35 @@
       });
     });
 
-    // ─── 7. Mobile Nav Toggle ─────────────────────────────
+    // 5) Mobile nav toggle
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.querySelector('nav').classList.toggle('active');
     });
 
-    // ─── 8. Modal / Contact Form ──────────────────────────
+    // 6) Modal & focus-trap
     const modal = document.getElementById('modal');
     const closeBtn = modal.querySelector('.close');
     const modalBody = modal.querySelector('.modal-body');
-    let lastFocused;
+    let lastFocus;
     function getFocusable(el) {
       return el.querySelectorAll(
         'button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
       );
     }
     function openModal(html) {
-      lastFocused = document.activeElement;
+      lastFocus = document.activeElement;
       modalBody.innerHTML = html;
-      modal.setAttribute('aria-hidden', 'false');
+      modal.setAttribute('aria-hidden','false');
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
       const focusables = Array.from(getFocusable(modal));
       focusables[0].focus();
       function trap(e) {
         if (e.key !== 'Tab') return;
-        const first = focusables[0], last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
+        const first = focusables[0], last = focusables[focusables.length -1];
+        if (e.shiftKey && document.activeElement===first) {
           e.preventDefault(); last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
+        } else if (!e.shiftKey && document.activeElement===last) {
           e.preventDefault(); first.focus();
         }
       }
@@ -208,10 +221,10 @@
     }
     function closeModal() {
       modal.classList.remove('show');
-      modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
       modal.removeEventListener('keydown', modal._trap);
-      lastFocused && lastFocused.focus();
+      lastFocus && lastFocus.focus();
     }
     document.getElementById('contact-link').addEventListener('click', e => {
       e.preventDefault();
@@ -227,12 +240,12 @@
       `);
     });
     closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => e.target === modal && closeModal());
+    modal.addEventListener('click', e => e.target===modal && closeModal());
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+      if (e.key==='Escape' && modal.classList.contains('show')) closeModal();
     });
 
-    // ─── 9. **REPLACE** old submit handler with this new one ─────
+    // 7) **REPLACE** old submit handler with this fetch-powered one
     document.getElementById('contactForm').addEventListener('submit', async e => {
       e.preventDefault();
       const form = e.target;
@@ -263,32 +276,25 @@
       }
     });
 
-    // ─── 10. Back‐to‐Top Button ──────────────────────────────
+    // 8) Back-to-top button
     const scrollTop = document.createElement('button');
     scrollTop.id = 'scrollTop';
     scrollTop.innerHTML = '⬆';
     document.body.append(scrollTop);
     window.addEventListener('scroll', () => {
-      scrollTop.classList.toggle('show', window.pageYOffset > 300);
+      scrollTop.classList.toggle('show', window.pageYOffset>300);
     });
     scrollTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top:0, behavior:'smooth' });
     });
 
-    // ─── 11. Vanilla‐Tilt on project cards ──────────────────
+    // 9) Vanilla-Tilt (optional)
     document.addEventListener('DOMContentLoaded', () => {
       if (window.VanillaTilt) {
         document.querySelectorAll('.project-card').forEach(el => {
-          VanillaTilt.init(el, { max: 15, speed: 400, glare: true, 'max-glare': .2 });
+          VanillaTilt.init(el, { max:15, speed:400, glare:true, 'max-glare':.2 });
         });
       }
-    });
-
-    // ─── 12. Custom Cursor Movement ─────────────────────────
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
     });
   </script>
 </body>
